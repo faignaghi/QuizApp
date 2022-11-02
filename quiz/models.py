@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.db import models
 
 
@@ -32,11 +33,11 @@ class Quiz(UpdateCreateDate):
 
 class Question(UpdateCreateDate):
 
-    SCALE = {
-        ('B', 'Beginner')
-        ('I', 'Intermediate')
+    SCALE = (
+        ('B', 'Beginner'),
+        ('I', 'Intermediate'),
         ('A', 'Advanced')
-    }
+    )
 
     title = models.TextField()
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
