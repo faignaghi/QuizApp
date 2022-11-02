@@ -13,4 +13,4 @@ from .serializers import (
 
 class CategoryList(generics.ListAPIView):
     queryset = Category.objects.all()
-    serializer_class = ''
+    serializer_class = CategorySerializer
