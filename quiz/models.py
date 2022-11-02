@@ -19,6 +19,7 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
+    @property
     def quiz_count(self):
         return self.quizz.count()
 
@@ -33,6 +34,10 @@ class Quiz(UpdateCreateDate):
 
     class Meta:
         verbose_name_plural = 'Quizzes'
+
+    @property
+    def question_count(self):
+        return self.question_set.count()
 
 
 class Question(UpdateCreateDate):

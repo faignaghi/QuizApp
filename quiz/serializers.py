@@ -15,3 +15,15 @@ class CategorySerializer(serializers.ModelSerializer):
             'name',
             'quiz_count'
         )
+
+
+class QuizSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Quiz
+        fields = (
+            'id',
+            'title',
+            'category',
+            'question_count'
+        )
