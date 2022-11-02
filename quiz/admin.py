@@ -10,14 +10,14 @@ from .models import (
 
 class OptionAdmin(nested_admin.NestedTabularInline):
     model = Option
-    extra = 5
+    extra = 5  # optional
 
 
 class QuestionAdmin(nested_admin.NestedTabularInline):
     model = Question
     inlines = [OptionAdmin]
-    extra = 5
-    max_num = 20
+    extra = 5  # optional
+    max_num = 20  # optional
 
 
 class QuizAdmin(nested_admin.NestedModelAdmin):
