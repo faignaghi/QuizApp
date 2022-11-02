@@ -40,15 +40,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # drf
+    # drf (django_rest_framework)
     'rest_framework',
     'rest_framework.authtoken',
     'dj_rest_auth',
 
     # third party
+    'nested_admin',
 
     # myapp
     'quiz'
+
+
 ]
 
 MIDDLEWARE = [
