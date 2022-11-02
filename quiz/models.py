@@ -19,10 +19,14 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
+    def quiz_count(self):
+        return self.quizz.count()
+
 
 class Quiz(UpdateCreateDate):
     title = models.CharField(max_length=50, verbose_name='Quiz title')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name='quizz')
 
     def __str__(self):
         return self.title
